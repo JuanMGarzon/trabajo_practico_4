@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head"></head>
+<body>
+    <div th:replace="layouts/header :: body"></div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <aside class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://www.unju.edu.ar/biblioteca.html">Biblioteca</a></li>
+                    <li class="list-group-item"><a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html">Calendario Académico</a></li>
+                    <li class="list-group-item"><a href="https://www.fi.unju.edu.ar/carreras.html">Carreras</a></li>
+                    <li class="list-group-item"><a href="https://www.fi.unju.edu.ar/noticias.html">Noticias</a></li>
+                    <li class="list-group-item"><a href="https://www.fi.unju.edu.ar/contacto.html">Contacto</a></li>
+                </ul>
+            </aside>
+            <main class="col-md-9">
+                <section>
+                    <h2>Sobre la Facultad</h2>
+                    <p>La Facultad de Ciencias de la Programación de la Universidad Nacional de Jujuy se dedica a formar profesionales altamente capacitados en las áreas de programación, desarrollo de software y tecnologías de la información. Nuestro compromiso con la innovación y la excelencia académica nos impulsa a liderar en la formación de recursos humanos en el campo de las ciencias de la computación.</p>
+                    <p>Ofrecemos programas académicos de grado y posgrado que se destacan por su rigurosidad académica y su adaptación a las demandas del mercado laboral actual.</p>
+                </section>
+                <section>
+                    <h2>Noticias Recientes</h2>
+                    <article>
+                        <h3>Expansión del Laboratorio de Inteligencia Artificial</h3>
+                        <p>Recientemente, la Facultad ha ampliado su laboratorio de Inteligencia Artificial con recursos avanzados para la investigación y desarrollo de tecnologías emergentes. Este laboratorio permitirá a nuestros estudiantes y académicos explorar nuevas aplicaciones de la IA en sectores clave como la salud, la agricultura y la industria.</p>
+                    </article>
+                    <article>
+                        <h3>Participación en Proyectos de Innovación Tecnológica</h3>
+                        <p>Nuestra facultad ha sido seleccionada para participar en proyectos regionales de innovación tecnológica, colaborando con empresas locales para implementar soluciones innovadoras basadas en tecnologías digitales. Esta iniciativa fortalece nuestra conexión con la industria y promueve el desarrollo económico regional.</p>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div th:replace="layouts/footer :: footer"></div>
+</body>
+</html>
+
+

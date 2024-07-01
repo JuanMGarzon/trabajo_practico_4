@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JuanMGarzon Universidad Nacional de Jujuy Escuela de Minas</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+    <style>
+        .logo {
+            max-width: 100px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #212529;
+            color: white;
+        }
+        td {
+            background-color: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+        }
+        th:first-child, td:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        th:last-child, td:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-secondary">
+    <header class="bg-dark text-white p-3 text-center">
+        <h1>Innovación y Excelencia en Educación</h1>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Facultad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#acerca">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.fi.unju.edu.ar/17-carreras.html">Carreras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://noticias.unju.edu.ar/">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.fi.unju.edu.ar/servicios/telefonos.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

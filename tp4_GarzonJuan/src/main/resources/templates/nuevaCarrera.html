@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Carrera</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Nueva Carrera</h2>
+        <form th:action="@{/carreras}" th:object="${carrera}" method="post">
+            <div class="mb-3">
+                <label for="codigo" class="form-label">Código</label>
+                <input type="text" class="form-control" id="codigo" th:field="*{codigo}" required>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+            </div>
+            <div class="mb-3">
+                <label for="cantidadAnios" class="form-label">Cantidad de Años</label>
+                <input type="number" class="form-control" id="cantidadAnios" th:field="*{cantidadAnios}">
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="estado" th:field="*{estado}">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head">
+    <meta charset="UTF-8">
+    <title>Lista de Alumnos</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+	<div th:replace="layouts/header :: body"></div>
+    <div class="container mt-3">
+        <h2>Lista de Alumnos</h2>
+        <a href="/alumnos/nuevo" class="btn btn-primary mb-3">Nuevo Alumno</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Domicilio</th>
+                    <th>LU</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="alumno : ${alumnos}">
+                    <td th:text="${alumno.dni}"></td>
+                    <td th:text="${alumno.nombre}"></td>
+                    <td th:text="${alumno.apellido}"></td>
+                    <td th:text="${alumno.email}"></td>
+                    <td th:text="${alumno.telefono}"></td>
+                    <td th:text="${alumno.fechaNacimiento}"></td>
+                    <td th:text="${alumno.domicilio}"></td>
+                    <td th:text="${alumno.lu}"></td>
+                    <td>
+                        <a th:href="@{/alumnos/editar/{dni}(dni=${alumno.dni})}" class="btn btn-warning">Editar</a>
+                        <a th:href="@{/alumnos/eliminar/{dni}(dni=${alumno.dni})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="layouts/footer :: footer"></div>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
+

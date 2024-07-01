@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head">
+    <meta charset="UTF-8">
+    <title>Lista de Materias</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+	<div th:replace="layouts/header :: body"></div>
+    <div class="container mt-3">
+        <h2>Lista de Materias</h2>
+        <a class="btn btn-primary" th:href="@{/materias/nuevo}">Nueva Materia</a>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Curso</th>
+                    <th>Cantidad de Horas</th>
+                    <th>Modalidad</th>
+                    <th>Docente</th>
+                    <th>Carrera</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="materia : ${materias}">
+                    <td th:text="${materia.codigo}">Código</td>
+                    <td th:text="${materia.nombre}">Nombre</td>
+                    <td th:text="${materia.curso}">Curso</td>
+                    <td th:text="${materia.cantidadHoras}">Cantidad de Horas</td>
+                    <td th:text="${materia.modalidad}">Modalidad</td>
+                    <td th:text="${materia.nombreDocente}">Docente</td>
+                    <td th:text="${materia.nombreCarrera}">Carrera</td>
+                    <td>
+                        <a class="btn btn-warning" th:href="@{/materias/editar/{codigo}(codigo=${materia.codigo})}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{/materias/eliminar/{codigo}(codigo=${materia.codigo})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="layouts/footer :: footer"></div>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

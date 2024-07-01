@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head">
+    <meta charset="UTF-8">
+    <title>Lista de Carreras</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+	<div th:replace="layouts/header :: body"></div>
+    <div class="container mt-3">
+        <h2>Lista de Carreras</h2>
+        <a href="/carreras/nuevo" class="btn btn-primary mb-3">Nueva Carrera</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Cantidad de Años</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="carrera : ${carreras}">
+                    <td th:text="${carrera.codigo}"></td>
+                    <td th:text="${carrera.nombre}"></td>
+                    <td th:text="${carrera.cantidadAnios}"></td>
+                    <td th:text="${carrera.estado}"></td>
+                    <td>
+                        <a th:href="@{/carreras/editar/{codigo}(codigo=${carrera.codigo})}" class="btn btn-warning">Editar</a>
+                        <a th:href="@{/carreras/eliminar/{codigo}(codigo=${carrera.codigo})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="layouts/footer :: footer"></div>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
